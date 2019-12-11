@@ -1,6 +1,14 @@
 @import 'variables';
 @import 'mixins';
 
+// basic
 @import 'basic/reset';
 @import 'basic/typography';
 @import 'basic/utilities';
+
+// pages
+@import 'pages/home';
+
+// components
+@import 'components/header';
+@import 'components/socialicons';
