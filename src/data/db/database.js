@@ -19,11 +19,21 @@ const database = {
     aboutImage: '/images/about-image.jpg',
     aboutImageLg: '/images/about-image-lg.jpg',
     resumeFile: '/files/resume.pdf'
+  },
+  contactInfo: {
+    phoneNumbers: ['(647)-970-6725'],
+    emailAddress: ['stan.rashevsky@gmail.com'],
+    address: 'Toronto, Canada'
   }
 };
 
 // API calls
 Mock.onGet('/api/information').reply(config => {
   const response = database.information;
+  return [200, response];
+});
+
+Mock.onGet('/api/contactinfo').reply(config => {
+  const response = database.contactInfo;
   return [200, response];
 });
