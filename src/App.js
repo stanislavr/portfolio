@@ -1,11 +1,12 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-    </div>
+    <BrowserRouter>
+      <Switch></Switch>
+    </BrowserRouter>
   );
 }
 
