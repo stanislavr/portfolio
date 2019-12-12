@@ -1,0 +1,45 @@
+/*
+ * Skill animation
+ */
+
+.mi-skill {
+  color: $color-body;
+  font-weight: 300;
+  margin-bottom: 0;
+  position: relative;
+  -webkit-animation-name: bounce; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 1.5s; /* Safari 4.0 - 8.0 */
+  animation-name: bounce;
+  animation-duration: 1.5s;
+
+  /* Standard syntax */
+  @keyframes bounce {
+    0% {
+      left: 0px;
+      top: -200px;
+    }
+    80% {
+      left: 0px;
+      top: 30px;
+    }
+    100% {
+      left: 0px;
+      top: 0px;
+    }
+  }
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes example {
+    0% {
+      left: 0px;
+      top: -200px;
+    }
+    80% {
+      left: 0px;
+      top: 30px;
+    }
+    100% {
+      left: 0px;
+      top: 0px;
+    }
+  }
+}

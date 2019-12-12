@@ -24,6 +24,76 @@ const database = {
     phoneNumbers: ['(647)-970-6725'],
     emailAddress: ['stan.rashevsky@gmail.com'],
     address: 'Toronto, Canada'
+  },
+  skills: [
+    {
+      title: 'HTML5'
+    },
+    {
+      title: 'CSS3'
+    },
+    {
+      title: 'JavaScript ES6'
+    },
+    {
+      title: 'React'
+    },
+    {
+      title: 'Express'
+    },
+    {
+      title: 'MongoDB'
+    },
+    {
+      title: 'SQL'
+    },
+    {
+      title: 'Python'
+    },
+    {
+      title: 'Googling'
+    }
+  ],
+  experience: {
+    workExperience: [
+      {
+        id: 1,
+        year: 'Sep 2018 - Present',
+        position: 'Project Engineer',
+        company: 'Evertz Microsystems Ltd.',
+        details: 'test1'
+      },
+      {
+        id: 2,
+        year: 'Sep 2017 - Jan 2018',
+        position: 'Project Engineer',
+        company: 'Evertz Microsystems Ltd.',
+        details: 'test2'
+      },
+      {
+        id: 3,
+        year: 'May 2017 - Aug 2017',
+        position: 'Project Engineer',
+        company: 'Evertz Microsystems Ltd.',
+        details: 'test3'
+      },
+      {
+        id: 4,
+        year: 'May 2016 - Aug 2016',
+        position: 'Project Engineer',
+        company: 'Evertz Microsystems Ltd.',
+        details: 'test4'
+      }
+    ],
+    educationExperience: [
+      {
+        id: 1,
+        year: 'Aug 2014 - Aug 2018',
+        graduation: 'Electronic System Engineering (B.Eng)',
+        university: 'Conestoga College',
+        details: 'high gpa nice'
+      }
+    ]
   }
 };
 
@@ -35,5 +105,15 @@ Mock.onGet('/api/information').reply(config => {
 
 Mock.onGet('/api/contactinfo').reply(config => {
   const response = database.contactInfo;
+  return [200, response];
+});
+
+Mock.onGet('/api/skills').reply(config => {
+  const response = database.skills;
+  return [200, response];
+});
+
+Mock.onGet('/api/experience').reply(config => {
+  const response = database.experience;
   return [200, response];
 });
