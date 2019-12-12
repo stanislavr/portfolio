@@ -4,6 +4,7 @@ import './App.scss';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Resume from './pages/Resumes';
+import Portfolios from './pages/Portfolios';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path='/' exact component={Home} />
         <Route path='/contact' component={Contact} />
         <Route path='/resume' component={Resume} />
+        <Route path='/portfolios' component={Portfolios} />
       </Switch>
     </BrowserRouter>
   );

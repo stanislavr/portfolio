@@ -94,7 +94,39 @@ const database = {
         details: 'high gpa nice'
       }
     ]
-  }
+  },
+  portfolios: [
+    {
+      id: 1,
+      title: 'Test 1',
+      subtitle: 'TestTestTestTestTestTestTest',
+      imageUrl: '/images/portfolio-image-1.jpg',
+      largeImageUrl: ['/images/portfolio-image-1-lg.jpg'],
+      url: 'https://rashevskyi.com'
+    },
+    {
+      id: 2,
+      title: 'Test 2',
+      subtitle: 'TestTestTestTestTestTestTest',
+      imageUrl: '/images/portfolio-image-1.jpg',
+      largeImageUrl: ['/images/portfolio-image-1-lg.jpg'],
+      url: 'https://rashevskyi.com'
+    },
+    {
+      id: 3,
+      title: 'Test 3',
+      subtitle: 'TestTestTestTestTestTestTest',
+      imageUrl: '/images/portfolio-image-1.jpg',
+      url: '#'
+    },
+    {
+      id: 4,
+      title: 'Test 4',
+      subtitle: 'TestTestTestTestTestTestTest',
+      imageUrl: '/images/portfolio-image-1.jpg',
+      largeImageUrl: ['/images/portfolio-image-1-lg.jpg']
+    }
+  ]
 };
 
 // API calls
@@ -115,5 +147,10 @@ Mock.onGet('/api/skills').reply(config => {
 
 Mock.onGet('/api/experience').reply(config => {
   const response = database.experience;
+  return [200, response];
+});
+
+Mock.onGet('/api/portfolios').reply(config => {
+  const response = database.portfolios;
   return [200, response];
 });
