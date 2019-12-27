@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Resume from './pages/Resumes';
 import Portfolios from './pages/Portfolios';
+import About from './pages/About';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/contact' component={Contact} />
         <Route path='/resume' component={Resume} />
         <Route path='/portfolios' component={Portfolios} />
+        <Route path='/about' component={About} />
       </Switch>
     </BrowserRouter>
   );

@@ -6,6 +6,8 @@ const database = {
     name: 'Stanislav Rashevskyi',
     aboutContent:
       'Results-oriented software developer comfortable working in a fast-paced environment under minimum supervision. Excellent team player with a positive attitude and strong communication skills. Always eager to quickly learn and use new concepts. Currently focused on the MERN stack.',
+    aboutMe:
+      'Results-oriented software developer comfortable working in a fast-paced environment under minimum supervision. Excellent team player with a positive attitude and strong communication skills. Always eager to quickly learn and use new concepts. Currently focused on the MERN stack.Results-oriented software developer comfortable working in a fast-paced environment under minimum supervision. Excellent team player with a positive attitude and strong communication skills. Always eager to quickly learn and use new concepts. Currently focused on the MERN stack.',
     phone: '647-970-6725',
     language: 'English',
     email: 'stan.rashevsky@gmail.com',
@@ -126,6 +128,23 @@ const database = {
       imageUrl: '/images/portfolio-image-1.jpg',
       largeImageUrl: ['/images/portfolio-image-1-lg.jpg']
     }
+  ],
+  services: [
+    {
+      title: 'Software Development',
+      icon: 'code',
+      details: 'Test1'
+    },
+    {
+      title: 'Frontend Development',
+      icon: 'color-pallet',
+      details: 'Test2'
+    },
+    {
+      title: 'Backend Development',
+      icon: 'code',
+      details: 'Test3'
+    }
   ]
 };
 
@@ -152,5 +171,10 @@ Mock.onGet('/api/experience').reply(config => {
 
 Mock.onGet('/api/portfolios').reply(config => {
   const response = database.portfolios;
+  return [200, response];
+});
+
+Mock.onGet('/api/services').reply(config => {
+  const response = database.services;
   return [200, response];
 });
