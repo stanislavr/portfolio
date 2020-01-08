@@ -121,6 +121,7 @@ function About() {
           </div>
         </div>
       </div>
+      <br />
     </Layout>
   );
 }
