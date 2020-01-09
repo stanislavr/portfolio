@@ -16,6 +16,7 @@ function Contact() {
   });
   const [error, setError] = useState(false);
   const [message, setMessage] = useState('');
+  const [emailProcessing, setEmailProcessing] = useState(false);
 
   // form completion checks
   const submitHandler = event => {
@@ -32,9 +33,12 @@ function Contact() {
     } else if (!formdata.message) {
       setError(true);
       setMessage('Message is required');
+    } else if (emailProcessing) {
+      setError(true);
+      setMessage('Please wait, processing your email...');
     } else {
-      setError(false);
-      setMessage('You message has been sent!');
+      setEmailProcessing(true);
+      sendContactEmail(formdata);
     }
   };
 
@@ -61,6 +65,53 @@ function Contact() {
     } else {
       return null;
     }
+  };
+
+  // clearing contact form
+  const clearFormdata = () => {
+    setFormdata({ name: '', email: '', subject: '', message: '' });
+  };
+
+  // send an email to me
+  const sendContactEmail = ({ name, email, subject, message }) => {
+    // assign other emailJS variables
+    const {
+      REACT_APP_EMAILJS_SERVICEID: serviceID,
+      REACT_APP_EMAILJS_TEMPLATEID: templateID,
+      REACT_APP_EMAILJS_USERID: userID
+    } = process.env;
+
+    // send email using EmailJS api to my Mailgun box
+    window.emailjs
+      .send(
+        serviceID,
+        templateID,
+        {
+          name,
+          email,
+          subject,
+          message
+        },
+        userID
+      )
+      // successfully sent this email
+      .then(res => {
+        setError(false);
+        setMessage(
+          'You email has been successfully sent! Thanks for contacting me :)'
+        );
+        // clear the contact form
+        clearFormdata();
+        setEmailProcessing(false);
+      })
+      // error handling
+      .catch(err => {
+        console.error('Failed to send email. Error: ', err);
+        setError(true);
+        setMessage(
+          'Sorry, an error occured during your email submission! Feel free to contact me via email or LinkedIn :)'
+        );
+      });
   };
 
   // load up all contact information
