@@ -19,7 +19,7 @@ function Portfolios() {
     <Layout>
       <div className='mi-about mi-section mi-padding-top mi-padding-bottom'>
         <div className='container'>
-          <Sectiontitle title='Portfolios' />
+          <Sectiontitle title='Portfolio' />
           <div className='row mt-30-reverse'>
             {portfolios.map(portfolio => (
               <TrackVisibility

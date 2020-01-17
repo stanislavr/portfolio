@@ -54,6 +54,7 @@ function About() {
                   I am <span className='color-theme'>{information.name}</span>
                 </h3>
                 <p>{information.aboutMe}</p>
+
                 <ul>
                   {!information.name ? null : (
                     <li>
@@ -94,6 +95,17 @@ function About() {
                     <li>
                       <b>Freelance</b> {information.freelanceStatus}
                     </li>
+                  )}
+                  <br></br>
+                  {!information.aboutMeFacts ? null : (
+                    <div>
+                      <b>Interesting Facts:</b>
+                      <ul>
+                        {information.aboutMeFacts.map(fact => (
+                          <li>{' - ' + fact}</li>
+                        ))}
+                      </ul>
+                    </div>
                   )}
                 </ul>
                 <a href={information.resumeFile} className='mi-button'>
