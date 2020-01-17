@@ -62,13 +62,7 @@ function Header() {
         <p className='mi-header-copyright'>
           &copy; {new Date().getFullYear()}{' '}
           <b>
-            <a
-              rel='noopener noreferrer'
-              target='_blank'
-              href='http://rashevskyi.com'
-            >
-              Rashevskyi.com
-            </a>
+            <a href='/'>Rashevskyi.com</a>
           </b>
         </p>
       </div>
