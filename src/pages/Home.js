@@ -23,9 +23,9 @@ function Home() {
           <div className='row justify-content-center'>
             <div className='col-lg-10 col-12'>
               <div className='mi-home-content'>
+                <h1>Hello, World! </h1>
                 <h1>
-                  Hello, World! I am{' '}
-                  <span className='color-theme'>{information.name}</span>
+                  I am <span className='color-theme'>{information.name}</span>
                 </h1>
                 <p>{information.aboutContent}</p>
                 <Socialicons bordered />
